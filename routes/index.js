@@ -13,7 +13,7 @@ router.post('/', function(req, res, next) {
 
 
 	if(!personInfo.email || !personInfo.username || !personInfo.password || !personInfo.passwordConf){
-		res.send();
+		res.send({"Failure":"Fill up all the fields"});
 	} else {
 		if (personInfo.password == personInfo.passwordConf) {
 
