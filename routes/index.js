@@ -69,14 +69,14 @@ router.post('/login', function (req, res, next) {
 			if(data.password==req.body.password){
 				//console.log("Done Login");
 				req.session.userId = data.unique_id;
-				//console.log(req.session.userId);
-				res.send({"Success":"Success!"});
+				var sessionId = req.session.userId;
+				res.send({ "Success": "Success!", "SessionId": sessionId });
 				
 			}else{
 				res.send({"Success":"Wrong password!"});
 			}
 		}else{
-			res.send({"Success":"This Email Is not regestered!"});
+			res.send({"Success":"This Email Is not registered!"});
 		}
 	});
 });
