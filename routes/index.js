@@ -70,7 +70,7 @@ router.post('/login', function (req, res, next) {
 				//console.log("Done Login");
 				req.session.userId = data.unique_id;
 				var sessionId = req.session;
-				res.send({ "Success": "Success!", "SessionId": data.unique_id, "userId": sessionId.userId});
+				res.send({ "Success": "Success!", "SessionId": data, "userId": sessionId.userId});
 				
 			}else{
 				res.send({"Success":"Wrong password!"});
