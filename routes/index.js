@@ -68,7 +68,7 @@ router.post('/login', function (req, res, next) {
 			
 			if(data.password==req.body.password){
 				//console.log("Done Login");
-				//req.session.userId = data.unique_id;
+				req.session.userId = data.unique_id;
 				//var sessionId = req.session;
 				res.send({ "SessionId": data._id, "username": data.username, "email": data.email});
 				
