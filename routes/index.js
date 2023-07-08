@@ -69,8 +69,8 @@ router.post('/login', function (req, res, next) {
 			if(data.password==req.body.password){
 				//console.log("Done Login");
 				req.session.userId = data.unique_id;
-				var sessionId = req.session.userId;
-				res.send({ "Success": "Success!", "SessionId": sessionId });
+				var sessionId = req.session;
+				res.send({ "Success": "Success!", "SessionId": data.unique_id, "userId": sessionId.userId});
 				
 			}else{
 				res.send({"Success":"Wrong password!"});
